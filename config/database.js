@@ -2,12 +2,12 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: env('PGHOST', process.env.PGHOST),
-      port: env.int('PGPORT', 5432),
-      database: env('PGDATABASE', process.env.PGDATABASE),
-      user: env('PGUSER', process.env.PGUSER),
-      password: env('PGPASS', process.env.PGPASSWORD),
-      ssl: env.bool(true),
+      host: env('DATABASE_HOST', process.env.DATABASE_HOST),
+      port: env.int('DATABASE_PORT', 3306),
+      database: env('DATABASE_NAME', process.env.DATABASE_NAME),
+      user: env('DATABASE_USERNAME', process.env.DATABASE_USERNAME),
+      password: env('DATABASE_PASSWORD', process.env.DATABASE_PASSWORDWORD),
+      ssl: env.bool('DATABASE_SSL', false),
     },
     debug: false,
     acquireConnectionTimeout: 600000,
